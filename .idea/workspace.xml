@@ -26,8 +26,8 @@
       <file leaf-file-name="del.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/del.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+            <state relative-caret-position="345">
+              <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -38,8 +38,8 @@
       <file leaf-file-name="miscl_examples.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../cookbook_code/miscl_examples.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1265">
-              <caret line="55" column="41" selection-start-line="10" selection-start-column="0" selection-end-line="55" selection-end-column="41" />
+            <state relative-caret-position="1150">
+              <caret line="110" column="40" selection-start-line="58" selection-start-column="0" selection-end-line="110" selection-end-column="40" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -302,8 +302,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../../cookbook_code/miscl_examples.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1265">
-          <caret line="55" column="41" selection-start-line="10" selection-start-column="0" selection-end-line="55" selection-end-column="41" />
+        <state relative-caret-position="1150">
+          <caret line="110" column="40" selection-start-line="58" selection-start-column="0" selection-end-line="110" selection-end-column="40" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -312,8 +312,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/del.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        <state relative-caret-position="345">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

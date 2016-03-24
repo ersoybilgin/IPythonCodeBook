@@ -3,11 +3,19 @@ import pandas as pd
 import random
 import matplotlib.pyplot as plt
 
-switches = {'pandas': True, 'numpy': False, 'html': False,
-            'numba': False, 'replace': False, 'numexpr': False,
+switches = {'pandas': False, 'numpy': True, 'html': False,
+            'numba': True, 'replace': False, 'numexpr': False,
             'ctypes': False, 'cython': False}
 
 print('\n', switches, '\n')
+
+print('\nExamples for these packages will be run: \n')
+
+for i, packageName in enumerate(list(key for key, value in
+                                   switches.items() if value == True)):
+    print('    {0}. {1}'.format(i+1, packageName))
+
+
 
 # ------------ Pandas -------------------
 if switches['pandas']:
@@ -55,3 +63,59 @@ if switches['pandas']:
     df_month_week = df.groupby(['Month', 'Weekday']).sum()
 else:
     print('\n ---- Skipping Pandas:  \n')
+
+
+# ------------ NumPy -------------------
+if switches['numpy']:
+    print('\n ---- STARTING NumPy:  \n')
+
+    import timeit
+
+    n = 1000000
+
+    x = [random.random() for _ in range(n)]
+    y = [random.random() for _ in range(n)]
+
+    xa = np.array(x)
+    ya = np.array(y)
+
+    nmbRepeats = 10
+
+    t1 = timeit.timeit('[x[i] + y[i] for i in range(n)]',
+                       setup="from __main__ import x, y, n", number=nmbRepeats)  # pure Python
+    print('\n ---- Timer 1.1, sum two arrays in pure Python: time = {'
+          '0:1.3f}'.format(t1))
+    t2 = timeit.timeit('xa + ya', setup="from __main__ import xa, ya",
+                       number=nmbRepeats)  # NumPy
+    print(
+        '\n ---- Timer 1.2, sum two arrays in NumPy: time = {'
+        '0:1.3f}'.format(
+            t2))
+    print('\n   ratio = {0:1.0f}'.format(t1 / t2))
+
+    t1 = timeit.timeit('sum(x)', setup="from __main__ import x",
+                       number=nmbRepeats)  # pure Python
+    print('\n ---- Timer 2.1, sum all values of an array in pure '
+          'Python: time = {0:1.3f}'.format(t1))
+    t2 = timeit.timeit('np.sum(xa)',
+                       setup="from __main__ import np, xa",
+                       number=nmbRepeats)  # NumPy
+    print('\n ---- Timer 2.2, sum all values of an array in NumPy: '
+          'time = {0:1.3f}'.format(t2))
+    print('\n   ratio = {0:1.0f}'.format(t1 / t2))
+
+    t1 = timeit.timeit('[abs(x[i] - y[j]) for i in range(1000) for j '
+                       'in range(1000)]',
+                       setup="from __main__ import x, y",
+                       number=nmbRepeats)
+    print('\n ---- Timer 3.1, absolute distance between all items of '
+          'two arrays in pure Python: time = {0:1.3f}'.format(t1))
+    t2 = timeit.timeit('np.abs(xa[:1000, None] - ya[:1000])',
+                       setup="from __main__ import np, xa, ya",
+                       number=nmbRepeats)
+    print('\n ---- Timer 3.2, absolute distance between all items of '
+          'two arrays in NumPy: time = {0:1.3f}'.format(t2))
+    print('\n   ratio = {0:1.0f}'.format(t1 / t2))
+else:
+    print('\n ---- Skipping NumPy:  \n')
+
